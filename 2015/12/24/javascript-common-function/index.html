@@ -1,0 +1,275 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  
+  <title>Javascript语法糖 | 汐.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1.Array.prototype.slice数组的slice()方法通常用来从一个数组中抽取片断。但很多开发者不了解的是，这个方法还可以用来将“类数组”元素（比如 arguments、参数列表、节点列表和属性列表）转换成真正的数组：（译注：DOM 元素的属性列表通过 attributes属性获取), Array.prototype.slice.call(arguments)能将具有length属">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Javascript语法糖">
+<meta property="og:url" content="http://yoursite.com/2015/12/24/javascript-common-function/index.html">
+<meta property="og:site_name" content="汐.">
+<meta property="og:description" content="1.Array.prototype.slice数组的slice()方法通常用来从一个数组中抽取片断。但很多开发者不了解的是，这个方法还可以用来将“类数组”元素（比如 arguments、参数列表、节点列表和属性列表）转换成真正的数组：（译注：DOM 元素的属性列表通过 attributes属性获取), Array.prototype.slice.call(arguments)能将具有length属">
+<meta property="og:updated_time" content="2015-12-28T08:07:06.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Javascript语法糖">
+<meta name="twitter:description" content="1.Array.prototype.slice数组的slice()方法通常用来从一个数组中抽取片断。但很多开发者不了解的是，这个方法还可以用来将“类数组”元素（比如 arguments、参数列表、节点列表和属性列表）转换成真正的数组：（译注：DOM 元素的属性列表通过 attributes属性获取), Array.prototype.slice.call(arguments)能将具有length属">
+  
+    <link rel="alternative" href="/atom.xml" title="汐." type="application/atom+xml">
+  
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+    <link href="//fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+  
+
+</head>
+
+<body>
+<div id="container">
+  <div id="wrap">
+    <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <nav id="upper-nav" class="inner">
+      <a id="main-nav-toggle" class="nav-icon"></a>
+      <div class="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        
+          <a id="nav-github" class="nav-icon" href="https://github.com/biluo62"></a>
+        
+      </div>
+    </nav>
+    <div id="header-title">
+      
+        <h1 id="blog-title-wrap">
+          <a href="/" id="blog-title">hankliu</a>
+        </h1>
+      
+      
+        <h5 class="blog-subtitle-wrap">不吃闲饭，不看冷脸；不掩己拙，不揭人短；不求人喜，不招人烦。</h5>
+      
+    </div>
+    <div id="contenedor">
+      <ul class="cube">
+        <li class="cara"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="100" width="100" viewBox="-50 -50 200 200">
+          <circle cx="50" cy="50" r="45" stroke-width="5" stroke="black" stroke-opacity="0.5" fill-opacity="0"></circle>
+          <rect x="47.5" y="27.5" width="5" height="25" rx="2.5" ry="2.5" fill="black" fill-opacity="0.5" transform="rotate(330 50 50)"></rect>
+          <rect x="48.5" y="16.5" width="3" height="35" rx="1.5" ry="1.5" fill="black" fill-opacity="0.5"></rect>
+        </svg></li>
+        <li class="cara">L</li>
+        <li class="cara">X</li>
+        <li class="cara">P</li>
+        <li class="cara">C</li>
+        <li class="cara">Y</li>
+      </ul>
+    </div>
+    <nav id="main-nav">
+      
+        <a class="main-nav-link" href="/">Home</a>
+      
+        <a class="main-nav-link" href="/archives">Archives</a>
+      
+        <a class="main-nav-link" href="/about">About</a>
+      
+      <a class="main-nav-link st-search-show-outputs">Search</a>
+    </nav>
+  </div>
+</header>
+
+    <div class="outer">
+      <section id="main"><article id="post-javascript-common-function" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <h3 href="/2015/12/24/javascript-common-function/" class="article-date">
+  <time datetime="2015-12-24T11:18:13.000Z" itemprop="datePublished">2015-12-24</time>
+</h3>
+    
+  </div>
+  <div class="article-inner">
+  <div class="curve-down">
+  <div class="fill-content">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Javascript语法糖
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+        <h2 id="1-Array-prototype-slice"><a href="#1-Array-prototype-slice" class="headerlink" title="1.Array.prototype.slice"></a>1.Array.prototype.slice</h2><p>数组的slice()方法通常用来从一个数组中抽取片断。但很多开发者不了解的是，这个方法还可以用来将“类数组”元素（比如 arguments、参数列表、节点列表和属性列表）转换成真正的数组：（译注：DOM 元素的属性列表通过 attributes属性获取), Array.prototype.slice.call(arguments)能将具有length属性的对象转成数组.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a=&#123;length:<span class="number">2</span>,<span class="number">0</span>:<span class="string">'first'</span>,<span class="number">1</span>:<span class="string">'second'</span>&#125;;</div><div class="line"><span class="built_in">Array</span>.prototype.slice.call(a);<span class="comment">//  ["first", "second"]</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> a=&#123;length:<span class="number">2</span>&#125;;</div><div class="line"><span class="built_in">Array</span>.prototype.slice.call(a);<span class="comment">//  [undefined, undefined]</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> argsArr = <span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>);</div></pre></td></tr></table></figure>
+<h2 id="2-使用push来合并数组"><a href="#2-使用push来合并数组" class="headerlink" title="2.使用push来合并数组"></a>2.使用push来合并数组</h2><p>我们知道当我们想要合并两个数组时一般使用Array的concat()方法来试试，concat方法能够将两个及两个以上的数组合并成一个数组，同时我们也可以使用Array prototype 的push方法来实现两个数组的合并.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = [<span class="string">'hank'</span>, <span class="string">'mark'</span>]</div><div class="line"></div><div class="line"><span class="keyword">var</span> b = [<span class="string">'hulk'</span>]</div><div class="line"></div><div class="line"><span class="built_in">Array</span>.prototype.push.apply(a, b)</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(a) <span class="comment">// ['hank', 'mark', 'hulk']</span></div></pre></td></tr></table></figure>
+<h2 id="3-Js数据去掉小数点后边的0"><a href="#3-Js数据去掉小数点后边的0" class="headerlink" title="3.Js数据去掉小数点后边的0"></a>3.Js数据去掉小数点后边的0</h2><p>在一起，我一般是使用正则表达式来替换，先判断小数点后面有无0和0的位置，然后在使用正则来替换这些0。今天突然发现一个很神奇的方法: parseFloat()</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="number">1.0</span>;</div><div class="line">a = <span class="built_in">parseFloat</span>(a) <span class="comment">// 1</span></div></pre></td></tr></table></figure>
+<p>是不是特别简单?</p>
+<h2 id="4-JS浮点数运算精度"><a href="#4-JS浮点数运算精度" class="headerlink" title="4.JS浮点数运算精度"></a>4.JS浮点数运算精度</h2><p>在Javascript中两个浮点数进行运算是得到的结果可能不是我们想要的结果，比如:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a, b;</div><div class="line">a = <span class="number">0.2</span>;</div><div class="line">b = <span class="number">0.1</span>;</div><div class="line"></div><div class="line">c = a + b <span class="comment">// 0.30000000000000004, 不是我们想要的0.3</span></div></pre></td></tr></table></figure>
+<p>主要是因为计算机是二进制浮点运算，而我们输入的是十进制浮点数，十进制数转化为二进制运算过后再转化回来，在转化过程中可能会有损失.</p>
+<p>解决办法，先装换成整数，运算过后，再装换回来:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> T_NUMBER = <span class="string">'number'</span>;</div><div class="line"><span class="comment">// 两数相减，其他运算同理</span></div><div class="line">customSubtract = <span class="function"><span class="keyword">function</span>(<span class="params">minuend, subtrahend</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> maxDecimalDigits, minuendDecimalDigits, minuendStr, result, subtrahendDecimalDigits, subtrahendStr;</div><div class="line">    minuendStr = <span class="keyword">typeof</span> minuend === T_NUMBER ? minuend + <span class="string">''</span> : minuend;</div><div class="line">    subtrahendStr = <span class="keyword">typeof</span> subtrahend === T_NUMBER ? subtrahend + <span class="string">''</span> : subtrahend;</div><div class="line">    minuendDecimalDigits = minuendStr.indexOf(<span class="string">'.'</span>) === <span class="number">-1</span> ? <span class="number">0</span> : minuendStr.length - minuendStr.indexOf(<span class="string">'.'</span>) - <span class="number">1</span>;</div><div class="line">    subtrahendDecimalDigits = subtrahendStr.indexOf(<span class="string">'.'</span>) === <span class="number">-1</span> ? <span class="number">0</span> : subtrahendStr.length - subtrahendStr.indexOf(<span class="string">'.'</span>) - <span class="number">1</span>;</div><div class="line">    maxDecimalDigits = <span class="built_in">Math</span>.pow(<span class="number">10</span>, <span class="built_in">Math</span>.max(minuendDecimalDigits, subtrahendDecimalDigits));</div><div class="line">    result = (minuend * maxDecimalDigits - subtrahend * maxDecimalDigits) / maxDecimalDigits;</div><div class="line">    <span class="keyword">return</span> result;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h2 id="5-Is-object-empty"><a href="#5-Is-object-empty" class="headerlink" title="5. Is object empty?"></a>5. Is object empty?</h2><p>Check an object is empty or not?</p>
+<p>Jquery has a function to check the object: <strong> jQuery.isEmptyObject </strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">if ($.isEmptyObject(obj)) &#123;</div><div class="line">  // do something</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>It’s easy and cross-browser function.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> isEmptyObject = <span class="function"><span class="keyword">function</span>(<span class="params">obj</span>) </span>&#123;</div><div class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> key <span class="keyword">in</span> obj)&#123;</div><div class="line">    <span class="keyword">return</span> <span class="literal">false</span>; <span class="comment">// not empty</span></div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="keyword">return</span> <span class="literal">true</span>; <span class="comment">// empty</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <div class="article-footer-content">
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+
+        <a data-url="http://yoursite.com/2015/12/24/javascript-common-function/" data-id="cisflvmp600010rkezoye5ajn" class="article-share-link">Share</a>
+        
+      </div>
+    </footer>
+  </div>
+  </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/08/29/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Hello World
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/12/24/javascript-module/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">菜鸟学习Javascript模块化</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+      
+      <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/08/29/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/24/javascript-common-function/">Javascript语法糖</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/24/javascript-module/">菜鸟学习Javascript模块化</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/24/ubuntu-netstat/">ubuntu查看和关闭端口</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/24/what-is-object/">对象到底是什么</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PID/">PID</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/模块化/">模块化</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">4</span></li></ul>
+    </div>
+  </div>
+
+  
+</aside>
+      
+    </div>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      .
+      Theme by <a href="https://github.com/sun11/hexo-theme-paperbox" target="_blank">Paperbox</a>
+    </div>
+  </div>
+</footer>
+  </div>
+  <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+  <a href="#search" class="mobile-nav-link st-search-show-outputs">Search</a>
+</nav>
+  
+
+<!-- totop start -->
+<div id="totop">
+	<a title="To Top"></a>
+</div>
+<!-- totop end -->
+
+<!-- swiftype search start -->
+
+<!-- swiftype search end -->
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/lrsjng.jquery-qrcode/0.12.0/jquery.qrcode.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+</div>
+</body>
+</html>

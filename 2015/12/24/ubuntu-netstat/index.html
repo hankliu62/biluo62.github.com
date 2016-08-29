@@ -1,0 +1,260 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  
+  <title>ubuntu查看和关闭端口 | 汐.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一、查看端口12345678910111213141516171819202122232425262728293031netstat -anp// resultProto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program nametcp        0      0 127.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ubuntu查看和关闭端口">
+<meta property="og:url" content="http://yoursite.com/2015/12/24/ubuntu-netstat/index.html">
+<meta property="og:site_name" content="汐.">
+<meta property="og:description" content="一、查看端口12345678910111213141516171819202122232425262728293031netstat -anp// resultProto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program nametcp        0      0 127.">
+<meta property="og:updated_time" content="2016-02-01T02:43:30.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ubuntu查看和关闭端口">
+<meta name="twitter:description" content="一、查看端口12345678910111213141516171819202122232425262728293031netstat -anp// resultProto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program nametcp        0      0 127.">
+  
+    <link rel="alternative" href="/atom.xml" title="汐." type="application/atom+xml">
+  
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+    <link href="//fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+  
+
+</head>
+
+<body>
+<div id="container">
+  <div id="wrap">
+    <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <nav id="upper-nav" class="inner">
+      <a id="main-nav-toggle" class="nav-icon"></a>
+      <div class="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        
+          <a id="nav-github" class="nav-icon" href="https://github.com/biluo62"></a>
+        
+      </div>
+    </nav>
+    <div id="header-title">
+      
+        <h1 id="blog-title-wrap">
+          <a href="/" id="blog-title">hankliu</a>
+        </h1>
+      
+      
+        <h5 class="blog-subtitle-wrap">不吃闲饭，不看冷脸；不掩己拙，不揭人短；不求人喜，不招人烦。</h5>
+      
+    </div>
+    <div id="contenedor">
+      <ul class="cube">
+        <li class="cara"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="100" width="100" viewBox="-50 -50 200 200">
+          <circle cx="50" cy="50" r="45" stroke-width="5" stroke="black" stroke-opacity="0.5" fill-opacity="0"></circle>
+          <rect x="47.5" y="27.5" width="5" height="25" rx="2.5" ry="2.5" fill="black" fill-opacity="0.5" transform="rotate(330 50 50)"></rect>
+          <rect x="48.5" y="16.5" width="3" height="35" rx="1.5" ry="1.5" fill="black" fill-opacity="0.5"></rect>
+        </svg></li>
+        <li class="cara">L</li>
+        <li class="cara">X</li>
+        <li class="cara">P</li>
+        <li class="cara">C</li>
+        <li class="cara">Y</li>
+      </ul>
+    </div>
+    <nav id="main-nav">
+      
+        <a class="main-nav-link" href="/">Home</a>
+      
+        <a class="main-nav-link" href="/archives">Archives</a>
+      
+        <a class="main-nav-link" href="/about">About</a>
+      
+      <a class="main-nav-link st-search-show-outputs">Search</a>
+    </nav>
+  </div>
+</header>
+
+    <div class="outer">
+      <section id="main"><article id="post-ubuntu-netstat" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <h3 href="/2015/12/24/ubuntu-netstat/" class="article-date">
+  <time datetime="2015-12-24T10:55:37.000Z" itemprop="datePublished">2015-12-24</time>
+</h3>
+    
+  </div>
+  <div class="article-inner">
+  <div class="curve-down">
+  <div class="fill-content">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      ubuntu查看和关闭端口
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+        <h2 id="一、查看端口"><a href="#一、查看端口" class="headerlink" title="一、查看端口"></a>一、查看端口</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">netstat -anp</div><div class="line"></div><div class="line">// result</div><div class="line">Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name</div><div class="line">tcp        0      0 127.0.0.1:631           0.0.0.0:*               LISTEN      -</div><div class="line">tcp        0      0 0.0.0.0:27017           0.0.0.0:*               LISTEN      -</div><div class="line">tcp        0      0 127.0.0.1:6379          0.0.0.0:*               LISTEN      -</div><div class="line">tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN      -</div><div class="line">tcp        0      0 0.0.0.0:8080            0.0.0.0:*               LISTEN      -</div><div class="line">tcp        0      0 0.0.0.0:81              0.0.0.0:*               LISTEN      -</div><div class="line">tcp        0      0 0.0.0.0:82              0.0.0.0:*               LISTEN      -</div><div class="line">tcp        0      0 192.168.222.198:50233   180.97.33.107:443       ESTABLISHED 2361/google-chrome-</div><div class="line">...</div><div class="line">Active UNIX domain sockets (servers and established)</div><div class="line">Proto RefCnt Flags       Type       State         I-Node   PID/Program name    Path</div><div class="line">unix  2      [ ACC ]     STREAM     LISTENING     1996     -                   /tmp/mongodb-27017.sock</div><div class="line">unix  2      [ ACC ]     STREAM     LISTENING     781      -                   /tmp/.X11-unix/X0</div><div class="line">unix  2      [ ACC ]     STREAM     LISTENING     12932    1799/xfce4-session  /tmp/.ICE-unix/1799</div><div class="line">unix  2      [ ACC ]     STREAM     LISTENING     12931    1799/xfce4-session  @/tmp/.ICE-unix/1799</div><div class="line">unix  2      [ ACC ]     STREAM     LISTENING     15489    1915/fcitx          /tmp/fcitx-socket-:0</div><div class="line">unix  2      [ ACC ]     STREAM     LISTENING     16412    2068/sogou-qimpanel /tmp/sogou-qimpaneluser</div><div class="line">unix  2      [ ACC ]     STREAM     LISTENING     15796    2361/google-chrome- /tmp/.com.google.Chrome.KwiQ8d/SingletonSocket</div><div class="line">...</div><div class="line"></div><div class="line">// 查看某个端口的进程</div><div class="line">netstat -anp | grep 8081</div><div class="line"></div><div class="line">// result</div><div class="line">tcp        0      0 127.0.0.1:56770         127.0.0.1:8081          ESTABLISHED 2361/google-chrome-</div><div class="line">tcp6       0      0 :::8081                 :::*                    LISTEN      5359/gulp</div><div class="line">tcp6       0      0 127.0.0.1:8081          127.0.0.1:56770         ESTABLISHED 5359/gulp</div></pre></td></tr></table></figure>
+<h2 id="二、关闭某个端口的进程"><a href="#二、关闭某个端口的进程" class="headerlink" title="二、关闭某个端口的进程"></a>二、关闭某个端口的进程</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">kill -9 5359</div></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <div class="article-footer-content">
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PID/">PID</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ubuntu/">ubuntu</a></li></ul>
+
+        <a data-url="http://yoursite.com/2015/12/24/ubuntu-netstat/" data-id="cisflvmpe00040rkei3rmnip8" class="article-share-link">Share</a>
+        
+      </div>
+    </footer>
+  </div>
+  </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/12/24/javascript-module/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          菜鸟学习Javascript模块化
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/12/24/what-is-object/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">对象到底是什么</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+      
+      <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/08/29/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/24/javascript-common-function/">Javascript语法糖</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/24/javascript-module/">菜鸟学习Javascript模块化</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/24/ubuntu-netstat/">ubuntu查看和关闭端口</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/24/what-is-object/">对象到底是什么</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PID/">PID</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/模块化/">模块化</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">4</span></li></ul>
+    </div>
+  </div>
+
+  
+</aside>
+      
+    </div>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      .
+      Theme by <a href="https://github.com/sun11/hexo-theme-paperbox" target="_blank">Paperbox</a>
+    </div>
+  </div>
+</footer>
+  </div>
+  <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+  <a href="#search" class="mobile-nav-link st-search-show-outputs">Search</a>
+</nav>
+  
+
+<!-- totop start -->
+<div id="totop">
+	<a title="To Top"></a>
+</div>
+<!-- totop end -->
+
+<!-- swiftype search start -->
+
+<!-- swiftype search end -->
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/lrsjng.jquery-qrcode/0.12.0/jquery.qrcode.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+</div>
+</body>
+</html>
